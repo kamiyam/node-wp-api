@@ -40,7 +40,7 @@ function bundle() {
     .bundle()
     .pipe(source('bundle.js'))
     .pipe(buffer())
-    // .pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest('./assets/js'))
     .pipe(browserSync.stream());
 }
