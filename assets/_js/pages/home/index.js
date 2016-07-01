@@ -2,7 +2,7 @@
 
 var React = require('react');
 var Posts = require('../../component/posts');
-var fetch =  require('whatwg-fetch');
+var fetch = window.fetch;
 
 var api = 'http://api.wp-app.org/wp-json/wp/v2/posts';
 
@@ -20,6 +20,7 @@ module.exports = React.createClass({
             .then(function(response) {
                 return response.json()
             }).then(function(json) {
+                console.log(json)
                 self.setState({
                     posts:json
                 });
