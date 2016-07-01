@@ -20,7 +20,6 @@ module.exports = React.createClass({
             .then(function(response) {
                 return response.json()
             }).then(function(json) {
-                console.log(json)
                 self.setState({
                     posts:json
                 });
