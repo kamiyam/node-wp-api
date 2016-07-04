@@ -3,17 +3,10 @@ import React, { Component } from 'react';
 import Posts from 'component/posts';
 import style from './index.scss';
 
-import 'whatwg-fetch';
-
-const api = 'http://api.wp-app.org/wp-json/wp/v2/posts';
-
 import PostStore from 'stores/post';
 import PostAction from 'actions/post';
 
 export default class Home extends Component {
-    static get contextTypes() {
-        return { router: React.PropTypes.object.isRequired }
-    }
     constructor(props, context) {
         super(props, context);
         this.state = {
@@ -36,6 +29,7 @@ export default class Home extends Component {
         this.unsubscribe && this.unsubscribe();
     }
     onReceivePost(data) {
+        // console.log("onReceivePost");
         this.setState({
             ...data
         })

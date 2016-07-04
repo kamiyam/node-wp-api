@@ -14,17 +14,17 @@ class Posts extends Component{
         })
     }
     renderPosts(){
-        return this.state.posts.map(function(value, index){
+        return this.state.posts.map((value, index)=> {
             return (
                 <li key={index} className={style.post}>
-                    <h2 className="entry-title">{value.title.rendered}</h2>
-                    <div className="entry-content" dangerouslySetInnerHTML={{__html: value.content.rendered}} />
+                    <h2 className={style["entry-title"]}>{value.title.rendered}</h2>
+                    <div className={style["entry-content"]} dangerouslySetInnerHTML={{__html: value.content.rendered}} />
                 </li>
             )
         })
     }
     render() {
-        var posts = this.renderPosts();
+        const posts = this.renderPosts();
         return (
             <ul ref="posts">
                 {posts}
