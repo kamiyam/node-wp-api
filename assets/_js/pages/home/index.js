@@ -2,7 +2,7 @@
 
 var React = require('react');
 var Posts = require('../../component/posts');
-var fetch = window.fetch;
+require('whatwg-fetch');
 
 var api = 'http://api.wp-app.org/wp-json/wp/v2/posts';
 
