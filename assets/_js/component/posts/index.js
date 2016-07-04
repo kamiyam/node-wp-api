@@ -4,9 +4,9 @@ var React = require('react');
 
 var Posts = React.createClass({
     getInitialState: function(){
-      return {
-          posts: this.props.initialPosts
-      }
+        return {
+            posts: this.props.initialPosts
+        }
     },
     componentWillReceiveProps: function(nextProps){
         this.setState({
