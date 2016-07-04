@@ -1,29 +1,29 @@
-'use strict';
+import React, {Component, PropTypes} from'react';
+import style from './index.scss';
 
-var React = require('react');
-
-var Posts = React.createClass({
-    getInitialState: function(){
-        return {
+class Posts extends Component{
+    constructor(props, context) {
+        super(props, context);
+        this.state = {
             posts: this.props.initialPosts
-        }
-    },
-    componentWillReceiveProps: function(nextProps){
+        };
+    }
+    componentWillReceiveProps(nextProps) {
         this.setState({
             posts: nextProps.posts
         })
-    },
-    renderPosts: function(){
+    }
+    renderPosts(){
         return this.state.posts.map(function(value, index){
             return (
-                <li key={index} className="post">
+                <li key={index} className={style.post}>
                     <h2 className="entry-title">{value.title.rendered}</h2>
                     <div className="entry-content" dangerouslySetInnerHTML={{__html: value.content.rendered}} />
                 </li>
             )
         })
-    },
-    render: function() {
+    }
+    render() {
         var posts = this.renderPosts();
         return (
             <ul ref="posts">
@@ -31,9 +31,9 @@ var Posts = React.createClass({
             </ul>
         )
     }
-});
+}
 
-Posts.propTypes = { posts: React.PropTypes.array };
+Posts.propTypes = { posts: PropTypes.array };
 Posts.defaultProps = { initialPosts: [] };
 
-module.exports = Posts;
+export default Posts;
