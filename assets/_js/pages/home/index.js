@@ -34,7 +34,7 @@ module.exports = React.createClass({
     render: function(){
         return (
             <div>
-                <h1 class="app-title">WP API Sample Application</h1>
+                <h1 className="app-title">WP API Sample Application</h1>
                 <Posts posts={this.state.posts} />
             </div>
         )
