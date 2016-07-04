@@ -11,11 +11,11 @@ import webpackConfig        from './webpack-config';
 import webpackProductionConfig from './webpack-production-config';
 
 // Others
-import path                    from 'path';
-import express                 from 'express';
-import del                     from 'del';
+import path      from 'path';
+import express   from 'express';
+import del       from 'del';
 
-const devCompiler             = webpack(webpackConfig);
+const devCompiler = webpack(webpackConfig);
 
 const config = {
   port: 3000,
