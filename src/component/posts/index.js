@@ -1,7 +1,17 @@
 import React, {Component, PropTypes} from'react';
 import style from './index.scss';
 
-class Posts extends Component{
+export default class Posts extends Component{
+    static get propTypes() {
+        return {
+            posts: PropTypes.array
+        };
+    }
+    static get defaultProps() {
+        return {
+            initialPosts: []
+        };
+    }
     constructor(props, context) {
         super(props, context);
         this.state = {
@@ -32,8 +42,3 @@ class Posts extends Component{
         )
     }
 }
-
-Posts.propTypes = { posts: PropTypes.array };
-Posts.defaultProps = { initialPosts: [] };
-
-export default Posts;
