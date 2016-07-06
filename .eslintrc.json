@@ -12,7 +12,7 @@
         "react",
         "jsx"
     ],
-    "rules":{
+    "rules": {
         "react/jsx-uses-react": 1,
         "react/jsx-uses-vars": 1,
         "jsx/mark-used-vars": 1,
@@ -21,6 +21,5 @@
         "object-curly-spacing": [2, "never"],
         "max-len": ["error", 120, 4],
         "no-unused-vars": [1, {"vars": "all", "args": "after-used"}]
-
     }
 }
