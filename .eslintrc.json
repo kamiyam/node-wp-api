@@ -1,0 +1,25 @@
+{
+    "extends": "google",
+    "globals": {
+        "global": true,
+        "document": true,
+        "fetch": true
+    },
+    "parser": "babel-eslint",
+    "installedESLint": true,
+    "plugins": [
+        "react",
+        "jsx"
+    ],
+    "rules":{
+        "react/jsx-uses-react": 1,
+        "react/jsx-uses-vars": 1,
+        "jsx/mark-used-vars": 1,
+        "jsx/no-undef": 1,
+        "arrow-parens": [2, "always"],
+        "object-curly-spacing": [2, "never"],
+        "max-len": ["error", 120, 4],
+        "no-unused-vars": [1, {"vars": "all", "args": "after-used"}]
+
+    }
+}

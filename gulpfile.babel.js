@@ -1,6 +1,7 @@
 // gulp modules
 import gulp           from 'gulp';
 import gulpMinifyHTML from 'gulp-minify-html';
+import gulpEslint     from 'gulp-eslint';
 import sequence       from 'run-sequence';
 
 // webpack modules
@@ -75,6 +76,13 @@ gulp.task('copy-assets', () => {
 
 gulp.task('clean', (done) => {
   del(["#{webpackConfig.output.path}/*"], done);
+});
+
+gulp.task('lint', ()=> {
+  return gulp.src(['./src/**/*.js'])
+    .pipe(gulpEslint())
+    .pipe(gulpEslint.format())
+    .pipe(gulpEslint.failOnError());
 });
 
 gulp.task('default', ['dev-server']);

@@ -1,16 +1,16 @@
 import React from 'react';
-import { Router, Route, IndexRoute, browserHistory, RouterContext } from 'react-router'
+import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 
 import NotFoundPage from './not-found';
-import HomePage from './home'
+import HomePage from './home';
 
 const routes = (
-    <Router history={browserHistory}>
-        <Route path="/">
-            <IndexRoute component={HomePage}></IndexRoute>
-        </Route>
-        <Route path="*" component={NotFoundPage} />
-    </Router>
+  <Router history={browserHistory}>
+    <Route path="/">
+      <IndexRoute component={HomePage} />
+    </Route>
+    <Route path="*" component={NotFoundPage} />
+  </Router>
 );
 
-export default routes
+export default routes;
