@@ -37,6 +37,15 @@ gulp.task("dev-server", () => {
     publicPath: webpackConfig.output.publicPath
   }));
   app.use(webpackHotMiddleware(devCompiler));
+
+  // wp-api URL
+  app.get('/posts', (req, res) => {
+    const url = "http://api.wp-app.org/wp-json/wp/v2/posts";
+    let request = require('request');
+    request.get({url: url, json: true}, (err, response, body) => {
+      res.send(body)
+    });
+  });
   app.get('*', (req, res) => {
     res.sendFile(path.join(path.join(__dirname, 'assets/index.html')))
   });

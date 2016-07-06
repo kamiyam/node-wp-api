@@ -3,6 +3,7 @@
     "globals": {
         "global": true,
         "document": true,
+        "location": true,
         "fetch": true
     },
     "parser": "babel-eslint",

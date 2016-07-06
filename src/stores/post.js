@@ -3,12 +3,15 @@ import PostAction from 'actions/post';
 
 import 'whatwg-fetch';
 
-const api = 'http://api.wp-app.org/wp-json/wp/v2/posts';
+// const api = 'http://api.wp-app.org/wp-json/wp/v2/posts';
+const api = `http://${location.host}/posts`;
 
 export default Reflux.createStore({
   listenables: [PostAction],
   fetchList() {
-    fetch(api).then((response) => {
+    fetch(api, {
+      mode: 'same-origin'
+    }).then((response) => {
       return response.json();
     }).then((json) => {
       this.trigger({
