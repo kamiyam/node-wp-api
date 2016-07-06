@@ -28,7 +28,7 @@ export default class Posts extends Component {
       return (
         <li key={index} className={style.post}>
           <h2 className={style["entry-title"]}>{value.title.rendered}</h2>
-          <div className={style["entry-content"]} dangerouslySetInnerHTML={{__html: value.content.rendered}} />
+          <div className={style["entry-content"]} dangerouslySetInnerHTML={{__html: value.content.rendered}} ></div>
         </li>
       );
     });
