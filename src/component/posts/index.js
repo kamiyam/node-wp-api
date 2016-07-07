@@ -1,5 +1,5 @@
-import React, {Component, PropTypes} from 'react';
-import style from './index.scss';
+import React, {Component, PropTypes} from "react";
+import style from "./index.scss";
 
 export default class Posts extends Component {
   static get propTypes() {

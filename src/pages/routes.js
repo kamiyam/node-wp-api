@@ -1,8 +1,8 @@
-import React from 'react';
-import {Router, Route, IndexRoute, browserHistory} from 'react-router';
+import React from "react";
+import {Router, Route, IndexRoute, browserHistory} from "react-router";
 
-import NotFoundPage from './not-found';
-import HomePage from './home';
+import NotFoundPage from "./not-found";
+import HomePage from "./home";
 
 const routes = (
   <Router history={browserHistory}>

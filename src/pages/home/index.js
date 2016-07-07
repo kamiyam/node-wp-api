@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, {Component} from "react";
 
-import Posts from 'component/posts';
-import style from './index.scss';
+import Posts from "component/posts";
+import style from "./index.scss";
 
-import PostStore from 'stores/post';
-import PostAction from 'actions/post';
+import PostStore from "stores/post";
+import PostAction from "actions/post";
 
 export default class Home extends Component {
   constructor(props, context) {
@@ -38,7 +38,7 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        <h1 className={style['app-title']}>WP API Sample Application</h1>
+        <h1 className={style["app-title"]}>WP API Sample Application</h1>
         <Posts posts={this.state.posts} />
       </div>
     );

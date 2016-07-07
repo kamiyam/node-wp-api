@@ -1,5 +1,10 @@
 {
     "extends": "google",
+    "env": {
+        "es6": true,
+        "node": true,
+        "browser": true
+    },
     "globals": {
         "global": true,
         "document": true,
@@ -18,8 +23,16 @@
         "jsx/mark-used-vars": 1,
         "jsx/no-undef": 1,
         "arrow-parens": [2, "always"],
+        "quotes": [2, "double"],
         "object-curly-spacing": [2, "never"],
         "max-len": ["error", 120, 4],
-        "no-unused-vars": [1, {"vars": "all", "args": "after-used"}]
+        "no-unused-vars": [1, {
+            "vars": "all",
+            "args": "after-used"
+        }]
+    },
+    "ecmaFeatures": {
+        "jsx": true,
+        "experimentalObjectRestSpread": true
     }
 }

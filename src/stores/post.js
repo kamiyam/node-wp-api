@@ -1,7 +1,7 @@
-import Reflux from 'reflux';
-import PostAction from 'actions/post';
+import Reflux from "reflux";
+import PostAction from "actions/post";
 
-import 'whatwg-fetch';
+import "whatwg-fetch";
 
 // const api = 'http://api.wp-app.org/wp-json/wp/v2/posts';
 const api = `http://${location.host}/posts`;
@@ -10,7 +10,7 @@ export default Reflux.createStore({
   listenables: [PostAction],
   fetchList() {
     fetch(api, {
-      mode: 'same-origin'
+      mode: "same-origin"
     }).then((response) => {
       return response.json();
     }).then((json) => {
