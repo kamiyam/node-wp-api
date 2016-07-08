@@ -37,8 +37,7 @@ export default class Home extends Component {
   }
   render() {
     return (
-      <div>
-        <h1 className={style["app-title"]}>WP API Sample Application</h1>
+      <div className={style.content}>
         <Posts posts={this.state.posts} />
       </div>
     );
