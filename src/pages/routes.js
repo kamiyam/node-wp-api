@@ -2,12 +2,12 @@ import React from "react";
 import {Router, Route, IndexRoute, browserHistory} from "react-router";
 
 import NotFoundPage from "./not-found";
-import HomePage from "./home";
+import PostPage from "./post";
 
 const routes = (
   <Router history={browserHistory}>
     <Route path="/">
-      <IndexRoute component={HomePage} />
+      <IndexRoute component={PostPage} />
     </Route>
     <Route path="*" component={NotFoundPage} />
   </Router>
