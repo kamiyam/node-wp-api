@@ -1,4 +1,6 @@
 import React, {Component, PropTypes} from "react";
+import {Link} from "react-router";
+import moment from "moment";
 import style from "./index.scss";
 
 export default class Posts extends Component {
@@ -24,12 +26,19 @@ export default class Posts extends Component {
     });
   }
   renderPosts() {
-    return this.state.posts.map((value, index) => {
+    return this.state.posts.map((post) => {
       return (
-        <li key={index} className={style.post}>
-          <h2 className={style["entry-title"]}>{value.title.rendered}</h2>
-          <div className={style["entry-content"]} dangerouslySetInnerHTML={{__html: value.content.rendered}} ></div>
-        </li>
+          <li key={post.id} className={style.post}>
+            <Link to={`/posts/${post.id}`}>
+              <h2 className={style["entry-title"]}>{post.title.rendered}</h2>
+            </Link>
+            {/** <div className={style["entry-content"]}
+             * dangerouslySetInnerHTML={{__html: post.content.rendered}}></div>
+             */}
+            <small>
+              {moment(post.date).format("YYYY/MM/DD HH:mm:ss")}
+            </small>
+          </li>
       );
     });
   }

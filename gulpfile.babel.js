@@ -27,6 +27,8 @@ const config = {
   }
 };
 
+const apiUrl = "http://api.wp-app.org/wp-json/wp/v2/";
+
 /*
  * Development tasks
  */
@@ -38,14 +40,24 @@ gulp.task("dev-server", () => {
   }));
   app.use(webpackHotMiddleware(devCompiler));
 
-  // wp-api URL
-  app.get('/posts', (req, res) => {
-    const url = "http://api.wp-app.org/wp-json/wp/v2/posts";
+
+  const posts =  (req, res) => {
+    let postId = req.param("id") || "";
+    let url = `${apiUrl}posts/${postId}`;
+
     let request = require('request');
     request.get({url: url, json: true}, (err, response, body) => {
-      res.send(body)
+      if(err){
+        return console.log(err);
+      }
+      res.send(body);
     });
-  });
+  };
+
+  // wp-api URL
+  app.get('/api/posts', posts);
+  app.get('/api/posts/:id', posts);
+
   app.get('*', (req, res) => {
     res.sendFile(path.join(path.join(__dirname, 'assets/index.html')))
   });
