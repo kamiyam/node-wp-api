@@ -52,7 +52,13 @@ export default {
       {
         test: /\.sass|\.scss/,
         loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]_[local]_[hash:base64:5]!sass-loader?sourceMap'
-      }
+      },
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
+      { test: /\.svg$/, loader: 'url-loader?mimetype=image/svg+xml' },
+      { test: /\.woff$/, loader: 'url-loader?mimetype=application/font-woff' },
+      { test: /\.woff2$/, loader: 'url-loader?mimetype=application/font-woff' },
+      { test: /\.eot$/, loader: 'url-loader?mimetype=application/font-woff' },
+      { test: /\.ttf$/, loader: 'url-loader?mimetype=application/font-woff' }
     ]
   }
 }

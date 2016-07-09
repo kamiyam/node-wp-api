@@ -15,12 +15,14 @@
   "author": "WordCamp Kansai 2016 Organization",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "^3.3.6",
     "history": "^1.17.0",
     "moment": "^2.14.1",
     "react": "^0.14.8",
     "react-dom": "^0.14.8",
     "react-router": "^2.5.2",
     "reflux": "^0.4.1",
+    "url-loader": "^0.5.7",
     "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
