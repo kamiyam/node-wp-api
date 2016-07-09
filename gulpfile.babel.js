@@ -42,7 +42,7 @@ gulp.task("dev-server", () => {
 
 
   const posts =  (req, res) => {
-    let postId = req.param("id") || "";
+    let postId = req.params["id"] || "";
     let url = `${apiUrl}posts/${postId}`;
 
     let request = require('request');
