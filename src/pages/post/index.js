@@ -6,6 +6,8 @@ import style from "./index.scss";
 import PostStore from "stores/post";
 import PostAction from "actions/post";
 
+import {VelocityComponent} from "velocity-react";
+
 export default class Home extends Component {
   constructor(props, context) {
     super(props, context);
@@ -38,7 +40,9 @@ export default class Home extends Component {
   render() {
     return (
       <div className={style.content}>
-        <Posts posts={this.state.posts} />
+        <VelocityComponent animation={{opacity: this.state.posts.length > 0 ? 1 : 0}} duration={300}>
+          <Posts posts={this.state.posts} />
+        </VelocityComponent>
       </div>
     );
   }
